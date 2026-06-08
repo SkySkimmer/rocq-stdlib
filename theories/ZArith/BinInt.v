@@ -1340,7 +1340,7 @@ Bind Scope Z_scope with Z.t Z.
 
 (** Re-export Notations *)
 
-Number Notation Z Z.of_num_int Z.to_num_int : Z_scope.
+Number Notation Z Z.idZ Z.to_num_int : Z_scope.
 
 Infix "+" := Z.add : Z_scope.
 Notation "- x" := (Z.opp x) : Z_scope.
@@ -1920,5 +1920,5 @@ Proof.
 Qed.
 
 (** Re-export the notation for those who just [Import BinInt] *)
-Number Notation Z Z.of_num_int Z.to_num_hex_int : hex_Z_scope.
-Number Notation Z Z.of_num_int Z.to_num_int : Z_scope.
+Number Notation Z Z.idZ Z.to_num_hex_int : hex_Z_scope.
+Number Notation Z Z.idZ Z.to_num_int : Z_scope.

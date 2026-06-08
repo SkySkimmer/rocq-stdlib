@@ -304,11 +304,13 @@ Definition ldiff a b :=
    | neg a, neg b => of_N (N.ldiff (Pos.pred_N b) (Pos.pred_N a))
  end.
 
-Number Notation Z of_num_int to_num_hex_int : hex_Z_scope.
-Number Notation Z of_num_int to_num_int : Z_scope.
+Definition idZ (x:Z) := x.
+
+Number Notation Z idZ to_num_hex_int : hex_Z_scope.
+Number Notation Z idZ to_num_int : Z_scope.
 
 End Z.
 
 (** Re-export the notation for those who just [Import BinIntDef] *)
-Number Notation Z Z.of_num_int Z.to_num_hex_int : hex_Z_scope.
-Number Notation Z Z.of_num_int Z.to_num_int : Z_scope.
+Number Notation Z Z.idZ Z.to_num_hex_int : hex_Z_scope.
+Number Notation Z Z.idZ Z.to_num_int : Z_scope.
